@@ -8,7 +8,7 @@ const Scorecard = (data) => {
   const [waitingForBall, setWaitingForBall] = useState();
   const [matchDetails, setMatchDetails] = useState();
   const [fieldingPosition, setFieldingPosition] = useState();
-  
+  const [index, setIndex] = useState();
 
   const onSubmitHandler = (event) => {
     setCommentaryData(data1);
@@ -16,26 +16,24 @@ const Scorecard = (data) => {
     event.preventDefault();
   };
 
-  const startAnimation = () => {
+  const startAnimation = (index) => {
     let data = commentaryData.Commentary;
-
-    for (let index = 0; index < data.length; index++) {
-      (function (i) {
-        setTimeout(function () {
-          if (!data[index].Isball) {
-            setWaitingForBall(true);
-          } else {
-            getData(data[index].Commentary, data[index].Default_Commentary);
-            setMatchDetails({
-              score: data[index].Score,
-              over: data[index].Over,
-              batsman: data[index].Batsman_Name,
-              bowler: data[index].Bowler_Name,
-            });
-          }
-        }, 1000 * index);
-      })(index);
+    setIndex(index);
+    if (!data[index].Isball) {
+      setWaitingForBall(true);
+    } else {
+      getData(data[index].Commentary, data[index].Default_Commentary);
+      setMatchDetails({
+        score: data[index].Score,
+        over: data[index].Over,
+        batsman: data[index].Batsman_Name,
+        bowler: data[index].Bowler_Name,
+      });
     }
+  };
+
+  const playNext = () => {
+    startAnimation(index + 1);
   };
 
   const getData = async (Commentary, Default_Commentary) => {
@@ -72,7 +70,7 @@ const Scorecard = (data) => {
 
   useEffect(() => {
     if (commentaryData) {
-      startAnimation();
+      startAnimation(0);
     }
   }, [commentaryData]);
 
@@ -94,10 +92,7 @@ const Scorecard = (data) => {
             {matchDetails.batsman}--------{matchDetails.bowler}
           </>
         )}
-        <MobileAnimation 
-          waitingForBall={waitingForBall}
-          playNext={() =>{}}
-        />
+        <MobileAnimation waitingForBall={waitingForBall} playNext={playNext} />
       </div>
     </>
   );
