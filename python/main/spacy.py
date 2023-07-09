@@ -121,7 +121,7 @@ def clean_and_tokenize_ngrams(text):
     print("\n text \n", new_text)
     print("\n ngrams \n", ngram_list_1, ngram_list_2)
     
-    return {'label_1': list(set(ngram_list_1)), 'label_2': list(set(ngram_list_2))}
+    return {'ball_position': list(set(ngram_list_1)), 'result': list(set(ngram_list_2))}
 
 
 def getLabels(row):
