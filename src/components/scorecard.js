@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MobileAnimation from "./mobileAnimation";
 import "./scorecard.css";
 
 const Scorecard = (data) => {
@@ -21,6 +22,7 @@ const Scorecard = (data) => {
             <input type="submit" />
           </form>
         </div>
+        <MobileAnimation />
         {commentaryData && (
           <div className="details">
             <div>Over:{commentaryData.Commentary[0].Over}</div>
