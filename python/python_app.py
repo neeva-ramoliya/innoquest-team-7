@@ -18,7 +18,7 @@ rows = [
     },
     {
         "Default_Commentary": "47.4: Bilal Khan to Logan van Beek, Leg bye.",
-        "Commentary": "In line with the stumps and bowled back of a length. Logan van Beek\u00a0looks to whip this away but misses and gets hit on the midriff. They steal a leg bye though.",
+        "Commentary": "FOUR! Logan van Beek connects this time! This is bowled full and outside the off stump. Logan van Beek hits this hard towards long off for four runs.",
     },
     {
         "Default_Commentary": "43.5: Bilal Khan to Wesley Barresi, 1 run.",

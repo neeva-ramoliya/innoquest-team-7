@@ -20,6 +20,8 @@ labels_1 = ['first slip',
  'cover point',
  'extra cover',
  'mid wicket',
+ 'deep midwicket',
+ 'bowlers head',
  'mid off',
  'mid on',
  'fly slip',
@@ -55,8 +57,10 @@ labels_1 = ['first slip',
  'on side',
  'point',
  'short cover',
+ 'deep cover',
  'short fine leg',
  'square leg',
+ 'deep square leg',
  'pads']
 
 
@@ -124,27 +128,4 @@ def getLabels(row):
     text = str(row['Default_Commentary']) + ' '+ str(row['Commentary']) 
     return clean_and_tokenize_ngrams(text) 
 # Example usage
-
-rows = [
-    {
-        "Default_Commentary": "47.5: Bilal Khan to Teja Nidamanuru, 2 runs.",
-        "Commentary": "Goes full this time and at the stumps. Teja Nidamanuru\u00a0lofts this back over the bowler's head and they run quickly to pick up a brace.",
-    },
-    {
-        "Default_Commentary": "47.4: Bilal Khan to Logan van Beek, Leg bye.",
-        "Commentary": "In line with the stumps and bowled back of a length. Logan van Beek\u00a0looks to whip this away but misses and gets hit on the midriff. They steal a leg bye though.",
-    },
-    {
-        "Default_Commentary": "43.5: Bilal Khan to Wesley Barresi, 1 run.",
-        "Commentary": "In line with the stumps once again and on a fullish length. Wesley Barresi\u00a0inside edges this through square leg for a single.",
-    },
-    {
-         "Default_Commentary": "42.4: Fayyaz Butt to Saqib Zulfiqar, Four!",
-        "Commentary": "FOUR! Poor delivery from Fayyaz Butt\u00a0\u200b\u200b\u200b\u200band\u00a0Saqib Zulfiqar\u00a0helps himself to his first boundary! This is bowled back of a length and going down leg. Saqib Zulfiqar\u00a0glances this towards fine leg for four runs.",
-    },
-    {
-         "Default_Commentary": "29.4: Fayyaz Butt to Vikramjit Singh, Four!",
-        "Commentary": "FOUR! Vikramjit Singh\u00a0is now one hit away from a well-deserved century! Fayyaz Butt\u00a0comes 'round the wicket and bowls this short, outside off. Vikramjit Singh\u00a0pulls this towards deep mid-wicket and collects four runs. The effort from the fielder is in vain.",
-    }
-]
 
