@@ -112,9 +112,6 @@ const MobileAnimation = (props) => {
               </div>
             </div>
           </div>
-          <div className="boundedAnimation">
-            <img src={require("../static/Umpire/1Run.gif")} alt="bowler" />
-          </div>
           {!!playLottie ? (<div className="lottieAnim">
             <LottieAnimation animation={animation} playLottie={playLottie}/>
           </div>) : ''}

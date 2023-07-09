@@ -12,6 +12,7 @@ const Scorecard = (data) => {
   const [fieldingPosition, setFieldingPosition] = useState();
   const [index, setIndex] = useState(0);
   const [animationDetails, setAnimationDetails] = useState(null);
+  const [scoreBoard, setScoreBoard] = useState(null);
 
   useEffect(() => {
     console.log("update fieldingPosition", fieldingPosition)
@@ -20,6 +21,10 @@ const Scorecard = (data) => {
   useEffect(() => {
     console.log("update animationDetails", animationDetails)
   }, [animationDetails])
+
+  useEffect(() => {
+    console.log("update index", index)
+  }, [index])
 
   const startAnimation = (idx) => {
     let data = commentaryData.Commentary;
@@ -57,6 +62,7 @@ const Scorecard = (data) => {
 
     if (!posCls) posCls = 'played';
     
+    console.log("updating animation data", ballData)
     setAnimationDetails({
       isLeft: ballData['Batsman_Style'] == "L",
       runs: parseInt(ballData['Batsman_Runs']),
@@ -65,6 +71,13 @@ const Scorecard = (data) => {
       isWicket: ballData["Iswicket"],
       isNoball: isNoball(result)
     });
+    setScoreBoard({
+      over: ballData['Over'],
+      score: ballData['Score'],
+      striker: `${ballData['Batsman_Name']} - ${ballData['Batsman_Details']['Runs']}(${ballData['Batsman_Details']['Balls']})`,
+      nonStirker: `${ballData['Non_Striker_Name']} - ${ballData['Non_Striker_Details']['Runs']}(${ballData['Non_Striker_Details']['Balls']})`,
+      bowler: `${ballData['Bowler_Name']} - ${ballData['Bowler_Details']['Wickets']}/${ballData['Bowler_Details']['Runs']}(${ballData['Bowler_Details']['Overs']})`
+    })
     setFieldingPosition(posCls);
   }
 
@@ -99,7 +112,12 @@ const Scorecard = (data) => {
       });
   };
   useEffect(() => {
-    setCommentaryData(DATA.data1);
+    if(window.location.search.includes('no=1')) {
+      setCommentaryData(DATA.data1);
+    } else {
+      setCommentaryData(DATA.data2);
+    }
+    
   }, []);
 
   useEffect(() => {
@@ -144,19 +162,19 @@ const Scorecard = (data) => {
           <div className="teamStat">
             <div className="player">
               <img src={require("../static/bat.png")} />
-              Muhammad S - 3(11)
+              {scoreBoard && scoreBoard.striker}
             </div>
             <div className="player">
-              Abdulrahman A - 1(2)
+            {scoreBoard && scoreBoard.nonStirker}
             </div>
           </div>
           <div className="score">
-            27/3 (5.0)
+          {scoreBoard && scoreBoard.score}
 
           </div>
           <div className="teamStat">
             <div className="player">
-              Bijo Philip - 1/6(2)
+            {scoreBoard && scoreBoard.bowler}
             </div>
           </div>
           <div className="team">
