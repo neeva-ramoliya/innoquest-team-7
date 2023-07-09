@@ -139,7 +139,7 @@ export const getAnimation = (data) => {
     }
 
     if (isNoball) {
-      return 'ANIMATION_WIDE'
+      return 'ANIMATION_NOBALL'
     }
 
     if (runs) {
@@ -150,6 +150,4 @@ export const getAnimation = (data) => {
       if(runs == 1) return 'ANIMATION_ONE';
       if(runs == 0) return 'ANIMATION_NO_RUN';
     }
-
-    return 'ANIMATION_NO_RUN';
 }

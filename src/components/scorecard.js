@@ -124,6 +124,17 @@ const Scorecard = (data) => {
           animation={animationDetails && getAnimation(animationDetails)}
           playNext={playNext}
         />
+        {/* <MobileAnimation
+          waitingForBall={false}
+          labelClass={'longOff'}
+          isLeft={true}
+          runs={3}
+          isWide={false}
+          isWicket={false}
+          distance={3}
+          animation={'ANIMATION_THREE'}
+          playNext={playNext}
+        /> */}
         <div className="boundedScoreboard">
 
         </div>

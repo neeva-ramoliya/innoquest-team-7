@@ -88,14 +88,14 @@ const MobileAnimation = (props) => {
         <div className="boundedMobile">
           <div className={cx("boundedWagonWheel", {'left': isLeft})}>
             <div className="pitch">
-              <img src={require("../static/groundBgNew.jpg")} alt="ground" style={isLeft && {transform: "scaleX(-1)"}} />
+              <img src={require("../static/groundBgNew.jpg")} alt="ground" className={cx("graoundImg", {'left': isLeft})}/>
               <div className={cx("ball ", currentBallState)} style={{ transitionDuration: `${transition}s` }}>
                 <img src={require("../static/ballNew.png")} alt="ball" />
               </div>
               <div className={cx("bowler", currentBowlerState)} style={{ transitionDuration: "5s" }}>
                 <img src={require("../static/bowler.png")} alt="bowler" />
               </div>
-              <div className="bat">
+              <div className="bat">s
                 <img src={require("../static/batsman.png")} alt="ball" />
               </div>
             </div>
@@ -103,9 +103,9 @@ const MobileAnimation = (props) => {
           <div className="boundedAnimation">
             <img src={require("../static/Umpire/1Run.gif")} alt="bowler" />
           </div>
-          <div className="lottieAnim">
-            <LottieAnimation />
-          </div>
+          {!!playLottie ? (<div className="lottieAnim">
+            <LottieAnimation animation={animation}/>
+          </div>) : ''}
         </div>
       </div>
     </>
