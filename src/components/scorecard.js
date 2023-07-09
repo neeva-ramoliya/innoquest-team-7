@@ -7,6 +7,8 @@ const Scorecard = (data) => {
   const [commentaryData, setCommentaryData] = useState();
   const [waitingForBall, setWaitingForBall] = useState();
   const [matchDetails, setMatchDetails] = useState();
+  const [fieldingPosition, setFieldingPosition] = useState();
+  
 
   const onSubmitHandler = (event) => {
     setCommentaryData(data1);
@@ -92,7 +94,10 @@ const Scorecard = (data) => {
             {matchDetails.batsman}--------{matchDetails.bowler}
           </>
         )}
-        <MobileAnimation />
+        <MobileAnimation 
+          waitingForBall={waitingForBall}
+          playNext={() =>{}}
+        />
       </div>
     </>
   );
