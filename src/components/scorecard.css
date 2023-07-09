@@ -24,6 +24,7 @@
   background-color: #ffffff;
   position: relative;
   display: flex;
+  max-height: 60px ;
 }
 .boundedScoreboard .team {
   width: 60px;
