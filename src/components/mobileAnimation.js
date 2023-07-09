@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import LottieAnimation from "./lottieAnimation";
 import cx from 'classnames';
 import './mobileAnimation.css';
 import './animations.css';
@@ -58,6 +59,9 @@ const MobileAnimation = (props) => {
           </div>
           <div className="boundedAnimation">
             <img src={require("../static/Umpire/1Run.gif")} alt="bowler" />
+          </div>
+          <div>
+            <LottieAnimation />
           </div>
         </div>
       </div>
