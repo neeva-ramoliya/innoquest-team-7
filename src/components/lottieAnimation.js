@@ -8,7 +8,7 @@ const LottieAnimation = (props) => {
     return outAnimation;
   }
 
-  const { View } = useLottie({animationData: getAnimation(props.animation), loop: true});
+  const { View } = useLottie({ animationData: getAnimation(props.animation), loop: true });
 
   return <>{View}</>;
 };
