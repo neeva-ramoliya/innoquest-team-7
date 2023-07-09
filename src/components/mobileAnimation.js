@@ -61,7 +61,7 @@ const MobileAnimation = (props) => {
             <img src={require("../static/Umpire/1Run.gif")} alt="bowler" />
           </div>
           <div>
-            <LottieAnimation />
+            {/* <LottieAnimation /> */}
           </div>
         </div>
       </div>

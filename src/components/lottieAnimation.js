@@ -1,6 +1,6 @@
 import React from "react";
 import { useLottie } from "lottie-react";
-import outAnimation from "../static/lottie-json/13490-cricket-out-animation.json";
+import outAnimation from "../static/lottie-json/out.json";
 
 const LottieAnimation = (props) => {
 

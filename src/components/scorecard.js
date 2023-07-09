@@ -76,6 +76,7 @@ const Scorecard = (data) => {
 
   return (
     <>
+      <div></div>
       <div className="scorecard_container">
         <div className="mecHeader">
           <div>
@@ -95,13 +96,6 @@ const Scorecard = (data) => {
         <div className="boundedScoreboard">
 
         </div>
-        {matchDetails && (
-          <>
-            {matchDetails.score}------ {matchDetails.over}--------
-            {matchDetails.batsman}--------{matchDetails.bowler}
-          </>
-        )}
-        <MobileAnimation waitingForBall={waitingForBall} playNext={playNext} />
       </div>
     </>
   );
