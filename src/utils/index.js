@@ -105,6 +105,14 @@ export const getFieldingPositionClass = (label) => {
   return FieldingPositionsMap.get([label[0]]);
 };
 
+const isWide = (result) => {
+  return result.indexof("wide") > -1;
+};
+
+const isNoball = (result) => {
+  return result.indexof("no ball") > -1;
+};
+
 export const getClassByZoneData = (ZAD = "5,46,2") => {
   let zad = ZAD.split(",");
   let zone = zad[0],
