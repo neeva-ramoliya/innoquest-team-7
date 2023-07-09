@@ -4,6 +4,10 @@ const FieldingPositionsMap = {
     'deep mid wicket': 'deepMidWicket'
 }
 
+const LowerZone = [] // dis 
+
+const UpperZone = ['deepSquareLeg', 'deepFineLeg', 'thirdMan'] // dis >=3
+
 export const getFieldingPositionClass = (labels) => { // labels = ['deep square leg', 'pads']
         // mapping class <-> label , pick first label 
 }
@@ -25,5 +29,5 @@ export const isWide = () => {
 }
 
 export const getClassByZoneData = (ZAD) => { // "5,46,2" -> zone angle and distance
-        // if(dis >= 3) :
+        // if(dis >= 3) : UpperZone[zidn-1]: LowerZone[zinx -1]
 }
