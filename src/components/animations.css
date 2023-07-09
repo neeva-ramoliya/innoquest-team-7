@@ -11,11 +11,13 @@
     width: 15px;
     height: 15px;
     border-radius: 100%;
-    transition: 0.5s all ease-in-out;
+    transition: 2s all ease-in-out;
     top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: ballRotate .5s infinite;
+  }
+  .ball.longAnimation {
+    transition: 5s all ease-in-out;
   }
   .ball.deliver {
     top: 60%;
@@ -39,16 +41,6 @@
   .pitch img {
     width: 100%;
   }
-  /*Ball Animation*/
-  @keyframes ballRotate {
-    from {
-        transform: translate(-50%, -50%) rotate(0);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
-  /*Ball Animation*/
   /* positions */
   .deepCover {
     top: 59%;

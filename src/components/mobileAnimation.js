@@ -10,12 +10,12 @@ const MobileAnimation = (data) => {
       <div className="mobileMockup">
         <div className="boundedMobile">
           <div className="boundedWagonWheel">
-            <div class="pitch">
+            <div className="pitch">
               <img src={require("../static/groundBgNew.jpg")} alt="ground" />
-              <div class="ball">
+              <div className="ball">
                 <img src={require("../static/ballNew.png")} alt="ball" />
               </div>
-              <div class="bat">
+              <div className="bat">
                 <img src={require("../static/batsman.png")} alt="ball" />
               </div>
             </div>
