@@ -94,7 +94,30 @@ const Scorecard = (data) => {
           extraRuns={0}
         />
         <div className="boundedScoreboard">
+          <div className="team">
+            <img src={require("../static/net.png")} />
+          </div>
+          <div className="teamStat">
+            <div className="player">
+              <img src={require("../static/bat.png")} />
+              Muhammad S - 3(11)
+            </div>
+            <div className="player">
+              Abdulrahman A - 1(2)
+            </div>
+          </div>
+          <div className="score">
+            27/3 (5.0)
 
+          </div>
+          <div className="teamStat">
+            <div className="player">
+              Bijo Philip - 1/6(2)
+            </div>
+          </div>
+          <div className="team">
+            <img src={require("../static/oman.gif")} />
+          </div>
         </div>
       </div>
     </>

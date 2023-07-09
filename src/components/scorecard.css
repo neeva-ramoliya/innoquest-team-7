@@ -21,17 +21,40 @@
 
 .boundedScoreboard {
   flex: 1;
-  background-image: url("https://cdn.my11circle.com/reverie-lobby/lobby/b1add01cbb3fcc97d176452d69bfd658.jpg");
-  background-position: top;
-  background-size: 100%;
+  background-color: #ffffff;
   position: relative;
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color:rgba(0,0,0,.5);
-    left: 0;
-    top: 0;
-  }
+  display: flex;
+}
+.boundedScoreboard .team {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+.boundedScoreboard .team img {
+  width: 100%;
+  height: 100%;
+}
+.teamStat {
+  display: flex;
+  flex: 1 1;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+}
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.player {
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player img {
+  width: 12px;
+  margin-right: 4px;
 }
