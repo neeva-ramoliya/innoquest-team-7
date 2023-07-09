@@ -1,11 +1,10 @@
 .mobileMockup {
-  width: 60vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .boundedMobile {
-  background-image: url(../static/MobileMockUp.png);
+  /* background-image: url("../static/mobileScreen.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 100%;
@@ -13,7 +12,7 @@
   padding-top: 2.8vh;
   padding-left: 3.3vw;
   padding-right: 3.6vw;
-  padding-bottom: 2.3vh;
+  padding-bottom: 2.3vh; */
 }
 .boundedAnimation,
 .boundedWagonWheel {
@@ -22,7 +21,7 @@
 }
 
 .boundedAnimation {
-  display: flex;
+  display: none;
   align-items: stretch;
 }
 .boundedAnimation img {

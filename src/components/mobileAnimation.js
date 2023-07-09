@@ -4,14 +4,14 @@ import './mobileAnimation.css';
 import './animations.css';
 
 const MobileAnimation = (props) => {
-  const { waitingForBall, labelClass, isLeft, isSix, runs, isFour} = props;
-  const [ currentBallState, setCurrentBallState ] = useState('start');
-  const [ umpireFadeIn, setUmpireFadeIn ] = useState('false');
- 
+  const { waitingForBall, labelClass, isLeft, isSix, runs, isFour } = props;
+  const [currentBallState, setCurrentBallState] = useState('start');
+  const [umpireFadeIn, setUmpireFadeIn] = useState('false');
+
 
   useEffect(() => {
     startBowl()
-  }, [labelClass]) 
+  }, [labelClass])
 
   useEffect(() => {
     console.log(currentBallState)
@@ -19,23 +19,23 @@ const MobileAnimation = (props) => {
 
   const startBowl = () => {
     setCurrentBallState('deliver');
-    setTimeout(() => { deliverBall()}, 500)
+    setTimeout(() => { deliverBall() }, 500)
   }
 
   const deliverBall = () => {
     setCurrentBallState('delivered');
-    setTimeout(() => { hitTheBall()}, isSix || isFour ? 1500 : 1000)
+    setTimeout(() => { hitTheBall() }, isSix || isFour ? 1500 : 1000)
   }
 
   const hitTheBall = () => {
     setCurrentBallState(labelClass);
-    setTimeout(() => {ballBack()}, isSix || isFour ? 1500 : 1000)
+    setTimeout(() => { ballBack() }, isSix || isFour ? 1500 : 1000)
   }
 
   const ballBack = () => {
     setCurrentBallState("start");
     setUmpireFadeIn(true)
-    setTimeout(() => {setUmpireFadeIn(false)}, 1500)
+    setTimeout(() => { setUmpireFadeIn(false) }, 1500)
   }
 
   return (
@@ -45,8 +45,11 @@ const MobileAnimation = (props) => {
           <div className="boundedWagonWheel">
             <div className="pitch">
               <img src={require("../static/groundBgNew.jpg")} alt="ground" />
-              <div className= {cx("ball ", currentBallState)}>
+              <div className={cx("ball ", currentBallState)} style={{ transitionDuration: "5s" }}>
                 <img src={require("../static/ballNew.png")} alt="ball" />
+              </div>
+              <div className="bowler" style={{ transitionDuration: "5s" }}>
+                <img src={require("../static/bowler.png")} alt="bowler" />
               </div>
               <div className="bat">
                 <img src={require("../static/batsman.png")} alt="ball" />

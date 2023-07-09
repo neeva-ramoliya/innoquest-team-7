@@ -11,13 +11,27 @@
     width: 15px;
     height: 15px;
     border-radius: 100%;
-    transition: 2s all ease-in-out;
-    top: 65%;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+    top: 77%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .ball.longAnimation {
-    transition: 5s all ease-in-out;
+  .ball.start {
+    opacity: 0;
+  }
+  .bowler {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+    top: 77%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .bowler.deliver {
+    top: 60%;
   }
   .ball.deliver {
     top: 60%;
@@ -35,7 +49,7 @@
   }
   .pitch {
     position: relative;
-    max-width: 500px;
+    max-width: 550px;
     display: flex;
   }
   .pitch img {
