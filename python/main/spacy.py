@@ -40,7 +40,7 @@ labels_1 = ['first slip',
  'backfoot defend',
  'backfoot defend',
  'backfoot point',
- 'cover',
+ 'covers',
  'cover point',
  'defend',
  'edge gully',
@@ -50,14 +50,12 @@ labels_1 = ['first slip',
  'mid off',
  'mid on',
  'mid wicket',
- 'no connect',
- 'off side',
- 'on side',
  'point',
  'short cover',
  'short fine leg',
  'square leg',
- 'pads']
+ 'keeper',
+ ]
 
 
 labels_2 = ['1 run', '2 leg byes', '2 runs', '3 runs', '4 leg byes', '5 wides','four','leg bye','no ball','no run','six','wide','bowled','caught','lbw','run out']

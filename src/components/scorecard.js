@@ -26,7 +26,16 @@ const Scorecard = (data) => {
             <input type="submit" />
           </form>
         </div>
-        <MobileAnimation />
+        <MobileAnimation 
+          waitingForBall={false}
+          labelClass={'longOff'}
+          isLeft = {true}
+          isSix = {true}
+          runs = {6}
+          isFour = {false}
+          isWide = {false}
+          extraRuns = {0}
+        />
       
       </div>
     </>
