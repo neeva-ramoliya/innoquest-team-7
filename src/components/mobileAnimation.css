@@ -1,0 +1,8 @@
+
+.mobileMockup {
+    background: url('../static/MobileMockUp.png') no-repeat;
+    width: 75vw;
+    height: auto;
+    background-size: contain;
+    background-position: center;
+}

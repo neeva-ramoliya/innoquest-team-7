@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-
+import './mobileAnimation.css';
 
 const MobileAnimation = (data) => {
 
 
   return (
     <>
-      <div>
-        placeholder for mobile 
+      <div className="mobileMockup">
+        
       </div>
     </>
   );
