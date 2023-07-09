@@ -1,8 +1,30 @@
-
 .mobileMockup {
-    background: url('../static/MobileMockUp.png') no-repeat;
-    width: 75vw;
-    height: auto;
-    background-size: contain;
-    background-position: center;
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boundedMobile {
+  background-image: url(../static/MobileMockUp.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  display: flex;
+  padding-top: 2.8vh;
+  padding-left: 3.3vw;
+  padding-right: 3.6vw;
+  padding-bottom: 2.3vh;
+}
+.boundedAnimation,
+.boundedWagonWheel {
+  flex: 1;
+  background-color: green;
+}
+
+.boundedAnimation {
+  display: flex;
+  align-items: stretch;
+}
+.boundedAnimation img {
+  width: 100%;
 }

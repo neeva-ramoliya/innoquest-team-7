@@ -1,0 +1,202 @@
+.bat {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.ball {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    transition: 0.5s all ease-in-out;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ballRotate .5s infinite;
+  }
+  .ball.deliver {
+    top: 60%;
+  }
+  .ball.played {
+    top: 50%;
+    left: 50%;
+  }
+  .ball.delivered {
+    top: 46%;
+    left: 50%;
+  }
+  .ball img {
+    border-radius: 100%;
+  }
+  .pitch {
+    position: relative;
+    max-width: 500px;
+    display: flex;
+  }
+  .pitch img {
+    width: 100%;
+  }
+  /*Ball Animation*/
+  @keyframes ballRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  /*Ball Animation*/
+  /* positions */
+  .deepCover {
+    top: 59%;
+    left: 6%;
+  }
+  .sweeper {
+    top: 45%;
+    left: 5%;
+  }
+  .backwardPoint {
+    top: 33%;
+    left: 21%;
+  }
+  .thirdMan {
+    top: 16%;
+    left: 21%;
+  }
+  .longStop {
+    top: 5%;
+    left: 50%;
+  }
+  .fineLeg {
+    top: 9%;
+    left: 68%;
+  }
+  .longLeg {
+    top: 16%;
+    left: 80%;
+  }
+  .deepBackwardSquareLeg {
+    top: 30%;
+    left: 90%;
+  }
+  .deepSquareLeg {
+    top: 45%;
+    left: 94%;
+  }
+  .deepMidWicket {
+    top: 60%;
+    left: 94%;
+  }
+  .cowCorner {
+    top: 76%;
+    left: 88%;
+  }
+  .longOn {
+    top: 92%;
+    left: 70%;
+  }
+  .longOff {
+    top: 92%;
+    left: 30%;
+  }
+  .deepExtraCover {
+    top: 78%;
+    left: 13%;
+  }
+  .extraCover {
+    top: 63%;
+    left: 28%;
+  }
+  .point {
+    top: 45%;
+    left: 26%;
+  }
+  .flySlip {
+    top: 30%;
+    left: 35%;
+  }
+  .shortFineLeg {
+    top: 30%;
+    left: 62%;
+  }
+  .shortBackwardSquareLeg {
+    top: 36%;
+    left: 70%;
+  }
+  .squareLeg {
+    top: 45%;
+    left: 74%;
+  }
+  .midWicket {
+    top: 52%;
+    left: 73%;
+  }
+  .midOn {
+    top: 67%;
+    left: 59%;
+  }
+  .midOff {
+    top: 67%;
+    left: 39%;
+  }
+  .shortMidOff {
+    top: 59%;
+    left: 40%;
+  }
+  .cover {
+    top: 55%;
+    left: 30%;
+  }
+  .coverPoint {
+    top: 50%;
+    left: 30%;
+  }
+  .gully {
+    top: 42%;
+    left: 39%;
+  }
+  .fourthSlip {
+    top: 40%;
+    left: 43%;
+  }
+  .thirdSlip {
+    top: 39%;
+    left: 44%;
+  }
+  .secondSlip {
+    top: 38%;
+    left: 46%;
+  }
+  .firstSlip {
+    top: 38%;
+    left: 48%;
+  }
+  .wicketKeeper,
+  .keeper {
+    top: 40%;
+    left: 50%;
+  }
+  .legSlip {
+    top: 40%;
+    left: 58%;
+  }
+  .shortLeg {
+    top: 47%;
+    left: 56%;
+  }
+  .sillyMidOn {
+    top: 55%;
+    left: 57%;
+  }
+  .sillyMidOff {
+    top: 50%;
+    left: 44%;
+  }
+  .sillyPoint {
+    top: 45%;
+    left: 44%;
+  }
+  /* positions */
