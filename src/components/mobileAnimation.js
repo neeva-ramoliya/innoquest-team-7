@@ -10,20 +10,21 @@ const TIMERS = {
   'DELIVERED_TO_FIELD': [3, 4, 5, 6, 7],
   'FIELD_TO_DELIVER': [3, 4, 5, 6, 7],
   'DELIVER_TO_START': [5],
-  'LOTTIE_ANIMATION': [15]
+  'LOTTIE_ANIMATION': [5]
 }
 
 const MobileAnimation = (props) => {
-  const { waitingForBall, labelClass, isLeft, runs, isWide, isWicket, distance, animation } = props;
+  const { waitingForBall, labelClass, animationDetails, animation } = props;
+  const { isLeft, distance } = animationDetails || {}; 
   const [currentBallState, setCurrentBallState] = useState('start');
   const [currentBowlerState, setCurrentBowlerState] = useState('start');
-  const [playLottie, setPlayLottie] = useState('false');
+  const [playLottie, setPlayLottie] = useState(false);
   const [transition, setTransition] = useState(0);
 
 
   useEffect(() => {
-    if (labelClass) {
-      console.log("label update", labelClass, "distance ", distance)
+    if (labelClass && animationDetails) {
+      console.log("starting animation props", props)
       setTransition(TIMERS.START_TO_DELIVER)
       startToDeliver()
     }
@@ -72,6 +73,12 @@ const MobileAnimation = (props) => {
   const deliverToStart = () => {
     setCurrentBallState("start");
     setCurrentBowlerState('start')
+    setTimeout(() => { 
+      startLottie()
+     }, TIMERS.START_TO_DELIVER * 1000)
+  }
+
+  const startLottie = () => {
     console.log("start lottie animations")
     setPlayLottie(true)
     setTimeout(() => { 
@@ -80,7 +87,6 @@ const MobileAnimation = (props) => {
       props.playNext()
      }, TIMERS.LOTTIE_ANIMATION * 1000)
   }
-
 
   return (
     <>
@@ -104,7 +110,7 @@ const MobileAnimation = (props) => {
             <img src={require("../static/Umpire/1Run.gif")} alt="bowler" />
           </div>
           {!!playLottie ? (<div className="lottieAnim">
-            <LottieAnimation animation={animation}/>
+            <LottieAnimation animation={animation} playLottie={playLottie}/>
           </div>) : ''}
         </div>
       </div>

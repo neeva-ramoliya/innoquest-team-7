@@ -128,13 +128,13 @@ export const getDistance = (ZAD) => {
 }
 
 export const getAnimation = (data) => {
-    const { runs, isNoball, isWide, isWicket} = data;
+    const { runs, isNoball, Wide, isWicket} = data;
     
     if (isWicket) {
       return 'ANIMATION_OUT';
     }
 
-    if (isWide) {
+    if (Wide) {
       return 'ANIMATION_WIDE'
     }
 
@@ -147,7 +147,7 @@ export const getAnimation = (data) => {
       if(runs == 4) return 'ANIMATION_FOUR';
       if(runs == 3) return 'ANIMATION_THREE';
       if(runs == 2) return 'ANIMATION_TWO';
-      if(runs == 1) return 'ANIMATION_ONE';
-      if(runs == 0) return 'ANIMATION_NO_RUN';
+      if(runs == 1) return 'ANIMATION_ONE';  
     }
+    if(runs == 0) return 'ANIMATION_NO_RUN';
 }

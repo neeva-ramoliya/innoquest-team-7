@@ -12,9 +12,10 @@ import sixRunAnimation from "../static/lottie-json/six.json";
 
 const LottieAnimation = (props) => {
 
-  if (!props.animation) {
+  if (!props.playLottie) {
     return <></>
   }
+  console.log("lottie props", props)
 
   const getAnimation = () => {
     switch (props.animation) {
@@ -40,7 +41,7 @@ const LottieAnimation = (props) => {
   }
 
   return (
-    <Lottie animationData={getAnimation()} loop={true} />
+    <Lottie animationData={getAnimation()} loop={false} />
   );
 };
 

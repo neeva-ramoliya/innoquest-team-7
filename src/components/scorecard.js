@@ -11,11 +11,15 @@ const Scorecard = (data) => {
   const [matchDetails, setMatchDetails] = useState();
   const [fieldingPosition, setFieldingPosition] = useState();
   const [index, setIndex] = useState(0);
-  const [animationDetails, setAnimationDetails] = useState();
+  const [animationDetails, setAnimationDetails] = useState(null);
 
   useEffect(() => {
     console.log("update fieldingPosition", fieldingPosition)
   }, [fieldingPosition])
+
+  useEffect(() => {
+    console.log("update animationDetails", animationDetails)
+  }, [animationDetails])
 
   const startAnimation = (idx) => {
     let data = commentaryData.Commentary;
@@ -38,6 +42,7 @@ const Scorecard = (data) => {
 
   const playNext = () => {
     setFieldingPosition(null);
+    setAnimationDetails(null);
     setIndex(index + 1);
     startAnimation(index + 1);
   };
@@ -116,11 +121,8 @@ const Scorecard = (data) => {
         <MobileAnimation
           waitingForBall={waitingForBall}
           labelClass={fieldingPosition}
-          isLeft={animationDetails ? animationDetails.isLeft : false}
-          runs={animationDetails ? animationDetails.runs : null}
-          isWide={animationDetails && animationDetails.isWide}
-          isWicket={animationDetails && animationDetails.isWicket}
-          distance={animationDetails && animationDetails.distance}
+          animationDetails= {animationDetails}
+          
           animation={animationDetails && getAnimation(animationDetails)}
           playNext={playNext}
         />
