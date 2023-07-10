@@ -13,6 +13,7 @@ const Scorecard = (data) => {
   const [index, setIndex] = useState(0);
   const [animationDetails, setAnimationDetails] = useState(null);
   const [scoreBoard, setScoreBoard] = useState(null);
+  const [score, setScore] = useState(null);
 
   useEffect(() => {
     console.log("update fieldingPosition", fieldingPosition)
@@ -35,7 +36,7 @@ const Scorecard = (data) => {
     if (!data[idx].Isball) {
       setWaitingForBall(true);
     } else {
-      getData(data[idx].Commentary, data[idx].Default_Commentary);
+      getData(data[idx].Commentary, data[idx].Default_Commentary, idx);
       setMatchDetails({
         score: data[idx].Score,
         over: data[idx].Over,
@@ -46,15 +47,16 @@ const Scorecard = (data) => {
   };
 
   const playNext = () => {
+    setScore(commentaryData.Commentary[index]['Score'])
     setFieldingPosition(null);
     setAnimationDetails(null);
     setIndex(index + 1);
     startAnimation(index + 1);
   };
 
-  const updateFieldingPosition = (data) => {
+  const updateFieldingPosition = (data, idx) => {
     const { ball_position, result } = data;
-    const ballData = commentaryData.Commentary[index]
+    const ballData = commentaryData.Commentary[idx]
     let posCls = getFieldingPositionClass(ball_position)
     if (!posCls) {
       posCls = getClassByZoneData(ballData['ZAD'])
@@ -81,13 +83,13 @@ const Scorecard = (data) => {
     setFieldingPosition(posCls);
   }
 
-  const getData = async (Commentary, Default_Commentary) => {
+  const getData = async (Commentary, Default_Commentary, idx) => {
     const data = {
       Commentary: Commentary,
       Default_Commentary: Default_Commentary,
     };
 
-    console.log("calling api for ", data)
+    console.log("calling api for ", data, idx)
     fetch("http://localhost:8000/api/endpoint", {
       method: "POST",
       headers: {
@@ -102,7 +104,7 @@ const Scorecard = (data) => {
         return response.json();
       })
       .then((res) => {
-        updateFieldingPosition(res.data)
+        updateFieldingPosition(res.data, idx)
         console.log("Response from Flask API:", res.data);
         // Handle the response data here
       })
@@ -169,7 +171,7 @@ const Scorecard = (data) => {
             </div>
           </div>
           <div className="score">
-          {scoreBoard && scoreBoard.score}
+          {score ? score : commentaryData ? commentaryData.Commentary[index]['Score'] : ''}
 
           </div>
           <div className="teamStat">

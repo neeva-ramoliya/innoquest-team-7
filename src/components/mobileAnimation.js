@@ -24,7 +24,7 @@ const MobileAnimation = (props) => {
 
   useEffect(() => {
     if (labelClass && animationDetails) {
-      console.log("starting animation props", props)
+      //console.log("starting animation props", props)
       setTransition(TIMERS.START_TO_DELIVER)
       startToDeliver()
     }
@@ -35,7 +35,7 @@ const MobileAnimation = (props) => {
   }, [currentBallState])
 
   useEffect(() => {
-    console.log("transiton time", transition)
+    //console.log("transiton time", transition)
   }, [transition])
 
   const startToDeliver = () => {

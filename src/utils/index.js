@@ -93,6 +93,8 @@ const UpperZone = [
 export const getFieldingPositionClass = (labels) => {
     if (!labels && !labels.length) return;
 
+    labels = labels.sort((a,b) => a.length > b.length ? -1 : 1)
+
     for (let index = 0; index < labels.length; index++) {
       const value = FieldingPositionsMap[labels[index ]];
       if (value) {

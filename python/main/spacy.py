@@ -9,7 +9,7 @@ labels_1 = [
  'deep cover',
  'deep extra cover',
  'deep backward square leg',
- 'deep square leg',
+ #'deep square leg',
  'deep midwicket',
  'deep mid wicket',
  'short fine leg',
@@ -50,6 +50,7 @@ labels_1 = [
  'short cover',
  'square leg',
  'keeper',
+ 'deep square leg',
  ]
 
 
